@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,400;0,600;0,700;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+.container-navbar {
+    background-color: #0B8CBF!important ;
+    padding: 15px!important;
+    box-sizing: border-box;
+    height: 5rem;
+}
+
+.container-conteudo {
+    display: flex!important;
+    justify-content: space-between!important;
+}
+
+.container-logo {
+    cursor: pointer;
+}
+
+.titulo {
+    font-size: 48px!important;
+    font-family: 'Montserrat Alternates', sans-serif!important;
+    font-weight: 500!important;
+}
+
+.container-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.container-conteudo {
+    cursor: pointer!important;
+}
+
+.conteudo-item {
+    text-transform: uppercase;
+    color: #feffff!important;
+
+}
+
+.conteudo-item:hover{
+    color: #ffffffb0!important;
+    border-bottom: 1px solid #feffff;
+    border-top: 1px solid #feffff;
+}
+

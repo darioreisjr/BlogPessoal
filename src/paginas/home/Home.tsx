@@ -1,8 +1,8 @@
 import { Button, Grid, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
 import React from "react";
+import "../../assets/imagemHome.png";
 import "./Home.css";
-
 function Home() {
   return (
     <>
@@ -12,9 +12,10 @@ function Home() {
         justifyContent="center"
         alignItems="center"
         style={{ backgroundColor: "#3F51B5" }}
+        className="container-principal"
       >
-        <Grid alignItems="center" item xs={6}>
-          <Box paddingX={20}>
+        <Grid alignItems="center" item xs={6} >
+          <Box paddingX={20} className="box-conteudo" >
             <Typography
               variant="h3"
               gutterBottom
@@ -22,6 +23,7 @@ function Home() {
               component="h3"
               align="center"
               style={{ color: "white", fontWeight: "bold" }}
+              className="box-conteudo-titulo"
             >
               Seja bem vindo(a)!
             </Typography>
@@ -32,32 +34,31 @@ function Home() {
               component="h5"
               align="center"
               style={{ color: "white", fontWeight: "bold" }}
+              className="box-conteudo-subtitulo"
             >
               expresse aqui os seus pensamentos e opiniões!
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center">
             <Box marginRight={1}></Box>
-            <Button
-              variant="outlined"
-              style={{
-                borderColor: "white",
-                backgroundColor: "#3F51B5",
-                color: "white",
-              }}
-            >
-              Ver Postagens
-            </Button>
+            <button className="learn-more">
+              <span className="circle" aria-hidden="true">
+                <span className="icon arrow"></span>
+              </span>
+              <span className="button-text">Ver postagem</span>
+            </button>
           </Box>
         </Grid>
-        <Grid item xs={6}>
+
+        <Grid item xs={6} className="container-img">
           <img
-            src="https://i.imgur.com/H88yIo2.png"
-            alt=""
-            width="500px"
-            height="500px"
+            src="https://i.imgur.com/IVvJCjn.png"
+            alt="imagem de uma pessoa estudando tecnologia"
+            width="50%"
+            className="img-central"
           />
         </Grid>
+        
         <Grid xs={12} style={{ backgroundColor: "white" }}></Grid>
       </Grid>
     </>
