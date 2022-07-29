@@ -50,12 +50,12 @@ function Home() {
           </Box>
         </Grid>
 
-        <Grid item xs={6} className="container-img">
+        <Grid item xs={6} className="container-img sessao-principal-imagem">
           <img
             src="https://i.imgur.com/IVvJCjn.png"
             alt="imagem de uma pessoa estudando tecnologia"
             width="50%"
-            className="img-central"
+            className="img-central principal-imagem-item"
           />
         </Grid>
         
