@@ -13,7 +13,7 @@ function Footer() {
 
                 <Grid className='container-rodape' alignItems="center" item xs={12} >
 
-                    <Box style={{ backgroundColor: "#3F51B5", height: "120px" }} className="container-redeSociais">
+                    <Box className="container-redeSociais">
 
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
 
@@ -32,7 +32,7 @@ function Footer() {
                             </a>
                         </Box>
                     </Box>
-                    <Box style={{ backgroundColor: "#303F9F", height: "60px" }} className='container-footer'>
+                    <Box className='container-footer'>
                         <Box paddingTop={1}>
                             <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2022 Copyright:</Typography>
                         </Box>

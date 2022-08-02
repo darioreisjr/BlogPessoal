@@ -1,8 +1,4 @@
-.text-decorator-none {
-    text-decoration: none;
-}
-
-.imagem {
+.imagem2 {
     background-image: url(https://www.indexmed.com.br/conecta/Content/isometric-data.png);
     background-repeat: no-repeat;
     width: 100vh ;
@@ -11,6 +7,6 @@
     background-position:center;
 }
 
-.negrito {
-    font-weight: "bold" !important;
+.btnCancelar {
+    margin-right: 20px !important;
 }

@@ -11,18 +11,16 @@ function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        style={{ backgroundColor: "#3F51B5" }}
         className="container-principal"
       >
-        <Grid alignItems="center" item xs={6} >
-          <Box paddingX={20} className="box-conteudo" >
+        <Grid alignItems="center" item xs={6}>
+          <Box paddingX={20} className="box-conteudo">
             <Typography
               variant="h3"
               gutterBottom
               color="textPrimary"
               component="h3"
               align="center"
-              style={{ color: "white", fontWeight: "bold" }}
               className="box-conteudo-titulo"
             >
               Seja bem vindo(a)!
@@ -33,7 +31,6 @@ function Home() {
               color="textPrimary"
               component="h5"
               align="center"
-              style={{ color: "white", fontWeight: "bold" }}
               className="box-conteudo-subtitulo"
             >
               expresse aqui os seus pensamentos e opiniões!
@@ -58,8 +55,8 @@ function Home() {
             className="img-central principal-imagem-item"
           />
         </Grid>
-        
-        <Grid xs={12} style={{ backgroundColor: "white" }}></Grid>
+
+        <Grid xs={12} className="cor-branca"></Grid>
       </Grid>
     </>
   );

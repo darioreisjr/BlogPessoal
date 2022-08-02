@@ -4,6 +4,7 @@ import "./App.css";
 import Navbar from "./componets/estaticos/navbar/Navbar";
 import Footer from "./componets/estaticos/footer/Footer";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import CadastroUsuario from "./paginas/cadastroUsuario/CadastroUsuario";
 
 
 function App() {
@@ -13,8 +14,9 @@ function App() {
       <div style={{ minHeight: "67.20vh" }}>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/Login" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/cadastrousuario" element={<CadastroUsuario />} />
         </Routes>
       </div>
       <Footer />
