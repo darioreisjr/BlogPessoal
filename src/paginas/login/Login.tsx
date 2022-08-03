@@ -1,52 +1,52 @@
-import { Grid, TextField, Typography, Button } from "@material-ui/core";
-import { Link, useNavigate } from "react-router-dom";
-import { Box } from "@mui/material";
-import React, { ChangeEvent, useEffect, useState } from "react";
-import useLocalStorage from "react-use-localstorage";
-import { login } from "../../services/Service";
-import UserLogin from "../../models/UserLogin";
-
-import "./Login.css";
+import React, { useState, useEffect, ChangeEvent } from 'react';
+import { Grid, Typography, TextField, Button } from '@material-ui/core';
+import { Link, useNavigate } from 'react-router-dom';
+import useLocalStorage from 'react-use-localstorage';
+import { login } from '../../services/Service';
+import UserLogin from '../../models/UserLogin';
+import './Login.css';
+import { Box } from '@mui/material';
 
 function Login() {
   // redirecionar o usuario para determinada pagina
-  let history = useNavigate();
+  let navigate = useNavigate();
 
   //hooks que vão manipular o nosso Local Storage para gravar o Token
   const [token, setToken] = useLocalStorage("token");
 
   // useState define como uma determinada variavel será inicializada quando o comp. for renderizado
-  const [userLogin, setUserLogin] = useState<UserLogin>({
-    id: 0,
-    nome: "",
-    usuario: "",
-    senha: "",
-    token: ""
-  });
-
-  useEffect(() => {
-    if (token !== "") {
-      history("/home");
+  const [userLogin, setUserLogin] = useState<UserLogin>(
+    {
+        id: 0,
+        usuario: '',
+        senha: '',
+        token: ''
     }
-  }, [token]);
+    )
 
-  function updatedModel(e: ChangeEvent<HTMLInputElement>) {
-    setUserLogin({
-      ...userLogin,
-      [e.target.name]: e.target.value,
-    });
+    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+
+      setUserLogin({
+          ...userLogin,
+          [e.target.name]: e.target.value
+      })
   }
 
-  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault();
+      useEffect(()=>{
+          if(token != ''){
+              navigate('/home')
+          }
+      }, [token])
 
-    try {
-      await login(`/usuarios/logar`, userLogin, setToken);
+  async function onSubmit(e: ChangeEvent<HTMLFormElement>){
+      e.preventDefault();
+      try{
+          await login(`/usuarios/logar`, userLogin, setToken)
 
-      alert("Usuário logado com sucesso!");
-    } catch (error) {
-      alert("Dados do usuário inconsistentes. Erro ao logar!");
-    }
+          alert('Usuário logado com sucesso!');
+      }catch(error){
+          alert('Dados do usuário inconsistentes. Erro ao logar!');
+      }
   }
 
   return (
