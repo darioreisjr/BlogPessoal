@@ -3,7 +3,6 @@
 
 .container-principal {
     background-color: #0B8CBF!important ;
-    height: calc(100vh - 20rem) ;
     width: 100vw;
 }
 
