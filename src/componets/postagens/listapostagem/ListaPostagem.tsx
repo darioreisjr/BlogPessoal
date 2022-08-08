@@ -9,18 +9,26 @@ import { useNavigate } from 'react-router-dom'
 import { Box } from '@mui/material';
 
 function ListaPostagem() {
+
+/* Um React Hook que permite que você tenha um estado em um componente funcional. */
   const [posts, setPosts] = useState<Postagem[]>([])
   const [token, setToken] = useLocalStorage('token');
   let navigate = useNavigate();
 
+  /* Verificando se o token está vazio e se estiver, alertará o usuário que ele precisa estar logado
+  e, em seguida, navegue até a página de login. */
   useEffect(() => {
-    if (token == "") {
+    if (token === "") {
       alert("Você precisa estar logado")
       navigate("/login")
-
     }
   }, [token])
 
+  
+/**
+   * GetPost() é uma função assíncrona que chama busca() com os parâmetros "/postagens", setPosts e
+   * um objeto com uma propriedade de cabeçalho que possui uma chave de 'Autorização' e um valor de token.
+   */
   async function getPost() {
     await busca("/postagens", setPosts, {
       headers: {
@@ -29,10 +37,9 @@ function ListaPostagem() {
     })
   }
 
+/* Chamando a função `getPost()` toda vez que o `posts.length` muda. */
   useEffect(() => {
-
     getPost()
-
   }, [posts.length])
 
   return (

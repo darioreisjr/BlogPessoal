@@ -90,7 +90,7 @@ function CadastroUsuario() {
                 <Box paddingX={10}>
 
                     <form onSubmit={cadastrar}>
-                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>Cadastrar</Typography>
+                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2 fonte-titulo-cadastrar'>Cadastrar</Typography>
 
                         <TextField
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}

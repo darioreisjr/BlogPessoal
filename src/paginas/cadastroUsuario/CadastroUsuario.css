@@ -1,3 +1,6 @@
+/* Importing a font from Google Fonts. */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 .imagem2 {
     background-image: url(https://www.indexmed.com.br/conecta/Content/isometric-data.png);
     background-repeat: no-repeat;
@@ -9,4 +12,9 @@
 
 .btnCancelar {
     margin-right: 20px !important;
+}
+
+.fonte-titulo-cadastrar {
+    font-family: 'Anton', sans-serif !important;
+    font-weight: "bold" !important;
 }

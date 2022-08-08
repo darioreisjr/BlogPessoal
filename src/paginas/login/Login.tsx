@@ -56,9 +56,10 @@ function Login() {
         direction="row"
         justifyContent="center"
         alignItems="center"
+        className="container-login"
       >
-        <Grid alignItems="center" xs={6}>
-          <Box paddingX={20}>
+        <Grid alignItems="center" xs={6} >
+          <Box paddingX={20} className="">
             <form action="" onSubmit={onSubmit}>
               <Typography
                 variant="h3"
@@ -66,7 +67,7 @@ function Login() {
                 color="textPrimary"
                 component="h3"
                 align="center"
-                className="negrito"
+                className="fonte-titulo-login"
               >
                 Entrar
               </Typography>
@@ -74,25 +75,27 @@ function Login() {
                 value={userLogin.usuario}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                 id="usuario"
-                label="usuário"
+                label="Digite seu usuário"
                 variant="outlined"
                 name="usuario"
                 margin="normal"
+                className="input-login"
                 fullWidth
               />
               <TextField
                 value={userLogin.senha}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                 id="senha"
-                label="senha"
+                label="Digite sua senha"
                 variant="outlined"
                 name="senha"
                 margin="normal"
                 type="password"
+                className="input-login"
                 fullWidth
               />
               <Box marginTop={2} textAlign="center">
-                <Button type="submit" variant="contained" color="primary">
+                <Button type="submit"  className='btn-logar'>
                   Logar
                 </Button>
               </Box>
@@ -108,7 +111,7 @@ function Login() {
                   variant="subtitle1"
                   gutterBottom
                   align="center"
-                  className="negrito"
+                  className="font-cadastre-se"
                 >
                   Cadastre-se
                 </Typography>
