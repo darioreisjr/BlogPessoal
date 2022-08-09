@@ -10,7 +10,8 @@ import { Box } from '@mui/material';
 /* Importando o hook useDispatch da biblioteca react-redux. */
 import { useDispatch } from 'react-redux';
 
-/* Importando a função do criador de ações do arquivo de actions. */import { addToken } from '../../store/tokens/actions';
+/* Importando a função do criador de ações do arquivo de actions. */
+import { addToken } from '../../store/tokens/actions';
 
 function Login() {
   // redirecionar o usuario para determinada pagina

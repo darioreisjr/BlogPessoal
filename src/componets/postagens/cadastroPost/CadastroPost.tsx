@@ -3,9 +3,11 @@ import {Container, Typography, TextField, Button, Select, InputLabel, MenuItem, 
 import "./CadastroPost.css";
 import { useNavigate, useParams } from "react-router-dom";
 import Tema from "../../../models/Tema";
-import useLocalStorage from "react-use-localstorage";
+//import useLocalStorage from "react-use-localstorage";
 import Postagem from "../../../models/Postagem";
 import { busca, buscaId, post, put } from "../../../services/Service";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokensReducer";
 
 function CadastroPost() {
   let navigate = useNavigate();
@@ -15,7 +17,12 @@ function CadastroPost() {
 
 /* Um React Hook que é usado para armazenar o estado do componente. */
   const [temas, setTemas] = useState<Tema[]>([]);
-  const [token, setToken] = useLocalStorage("token");
+  //const [token, setToken] = useLocalStorage("token");
+
+  /* Um hook que é usado para obter o estado do token. */  
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
   /* Verificando se o token está vazio, se estiver, alertará o usuário que ele precisa estar logado
   e navegue até a página de login. */
