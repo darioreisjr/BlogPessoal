@@ -12,11 +12,8 @@
     background-position:center;
 }
 
-
-
 .container-login {
     margin: 30px auto;
-    
 }
 
 .fonte-titulo-login {
@@ -35,7 +32,7 @@
 }
 
 input{
-    color: black;
+    color: black!important;
   }
 
 .font-cadastre-se {

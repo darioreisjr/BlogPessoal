@@ -84,7 +84,7 @@ function CadastroUsuario() {
     */
 
     return (
-        <Grid container direction='row' justifyContent='center' alignItems='center'>
+        <Grid container direction='row' justifyContent='center' alignItems='center' className="container-cadastrar">
             <Grid item xs={6} className='imagem2'></Grid>
             <Grid item xs={6} alignItems='center'>
                 <Box paddingX={10}>
@@ -96,10 +96,11 @@ function CadastroUsuario() {
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             value={user.nome}
                             id='nome'
-                            label='nome'
+                            label='Nome'
                             variant='outlined'
                             name='nome'
                             margin='normal'
+                            className="input-cadastrar"
                             fullWidth 
                             required /> {/* Required: indica que o campo deve ser preenchido */}
 
@@ -108,40 +109,44 @@ function CadastroUsuario() {
                             value={user.usuario}
                             type="email"
                             id='usuario'
-                            label='usuario'
+                            label='Usuario'
                             variant='outlined'
                             name='usuario'
                             margin='normal'
+                            className="input-cadastrar"
                             fullWidth required />
 
                         <TextField
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             value={user.foto}
                             id='foto'
-                            label='foto'
+                            label='Foto'
                             variant='outlined'
                             name='foto'
                             margin='normal'
+                            className="input-cadastrar"
                             fullWidth />
 
                         <TextField
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             value={user.senha}
                             id='senha'
-                            label='senha'
+                            label='Senha'
                             variant='outlined'
                             name='senha'
                             margin='normal' type='password'
+                            className="input-cadastrar"
                             fullWidth required />
 
                         <TextField
                             onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
                             value={confirmarSenha}
                             id='confirmarSenha'
-                            label='confirmarSenha'
+                            label='Confirmar Senha'
                             variant='outlined'
                             name='confirmarSenha'
                             margin='normal' type='password'
+                            className="input-cadastrar"
                             fullWidth required />
 
 

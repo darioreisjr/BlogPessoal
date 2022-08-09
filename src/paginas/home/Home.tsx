@@ -1,17 +1,24 @@
 import { Button, Grid, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+//import useLocalStorage from "react-use-localstorage";
 import "../../assets/imagemHome.png";
 import ModalPostagem from "../../componets/postagens/modalPostagem/ModalPostagem";
 import TabPostagem from "../../componets/postagens/tabpostagem/TabPostagem";
+import { TokenState } from "../../store/tokens/tokensReducer";
 import "./Home.css";
 
 function Home() {
 
   let navigate = useNavigate();
-  const [token, setToken] = useLocalStorage('token');
+  //const [token, setToken] = useLocalStorage('token');
+
+  /* Um hook que é usado para obter o estado do token. */  
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
   useEffect(()=> {
     if (token == '') {
@@ -56,12 +63,14 @@ function Home() {
             <Box marginRight={1}>
               <ModalPostagem/>
             </Box>
-            <button className="learn-more">
-              <span className="circle" aria-hidden="true">
-                <span className="icon arrow"></span>
-              </span>
-              <span className="button-text">Ver postagem</span>
-            </button>
+            <Link to="/posts">
+              <button className="learn-more">
+                <span className="circle" aria-hidden="true">
+                  <span className="icon arrow"></span>
+                </span>
+                <span className="button-text">Ver postagem</span>
+              </button>
+            </Link>
           </Box>
         </Grid>
 

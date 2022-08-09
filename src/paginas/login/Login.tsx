@@ -1,18 +1,28 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Grid, Typography, TextField, Button } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
+//import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../services/Service';
 import UserLogin from '../../models/UserLogin';
 import './Login.css';
 import { Box } from '@mui/material';
 
+/* Importando o hook useDispatch da biblioteca react-redux. */
+import { useDispatch } from 'react-redux';
+
+/* Importando a função do criador de ações do arquivo de actions. */import { addToken } from '../../store/tokens/actions';
+
 function Login() {
   // redirecionar o usuario para determinada pagina
   let navigate = useNavigate();
+  /* Um hook que permite despachar ações para a store do Redux. */
+  const dispatch = useDispatch();
+
+  /* Um React Hook que permite armazenar um valor no estado do componente. */
+  const [token, setToken] = useState("");
 
   //hooks que vão manipular o nosso Local Storage para gravar o Token
-  const [token, setToken] = useLocalStorage("token");
+  //const [token, setToken] = useLocalStorage("token");
 
   // useState define como uma determinada variavel será inicializada quando o comp. for renderizado
   const [userLogin, setUserLogin] = useState<UserLogin>(
@@ -33,8 +43,10 @@ function Login() {
   }
 
       useEffect(()=>{
-          if(token != ''){
-              navigate('/home')
+          if(token !== ''){
+            /* Enviando uma ação para a store do Redux. */
+            dispatch(addToken(token))
+            navigate('/home')
           }
       }, [token])
 

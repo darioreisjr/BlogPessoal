@@ -11,9 +11,19 @@ import CadastroPost from "./componets/postagens/cadastroPost/CadastroPost";
 import DeletarPostagem from "./componets/postagens/deletarPostagem/DeletarPostagem";
 import CadastroTema from "./componets/temas/cadastroTema/CadastroTema";
 import DeletarTema from "./componets/temas/deletarTema/DeletarTema";
+import store from './store/store';
+import { Provider } from "react-redux";
 
 function App() {
   return (
+
+/* 
+Um componente react-redux que disponibiliza o armazenamento Redux para as chamadas connect() no componente
+hierarquia abaixo. Normalmente, você não pode usar connect() sem envolver um componente pai ou ancestral
+em <Provider>. 
+*/
+    <Provider store={store}>
+
     <Router>
       <Navbar />
       <div>
@@ -31,9 +41,14 @@ function App() {
           <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
           <Route path="/deletarTema/:id" element={<DeletarTema />} />
         </Routes>
+
+
       </div>
       <Footer />
     </Router>
+
+    </Provider> 
+
   );
 }
 

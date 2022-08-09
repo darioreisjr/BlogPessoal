@@ -4,16 +4,21 @@ import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service'
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import './ListaPostagem.css';
-import useLocalStorage from 'react-use-localstorage';
+//import useLocalStorage from 'react-use-localstorage';
 import { useNavigate } from 'react-router-dom'
 import { Box } from '@mui/material';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function ListaPostagem() {
 
 /* Um React Hook que permite que você tenha um estado em um componente funcional. */
   const [posts, setPosts] = useState<Postagem[]>([])
-  const [token, setToken] = useLocalStorage('token');
+  //const [token, setToken] = useLocalStorage('token');
   let navigate = useNavigate();
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
   /* Verificando se o token está vazio e se estiver, alertará o usuário que ele precisa estar logado
   e, em seguida, navegue até a página de login. */

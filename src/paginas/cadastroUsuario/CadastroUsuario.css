@@ -6,15 +6,35 @@
     background-repeat: no-repeat;
     width: 100vh ;
     min-height:67.20vh;
-    background-size: cover;
+    background-size: auto;
     background-position:center;
-}
-
-.btnCancelar {
-    margin-right: 20px !important;
 }
 
 .fonte-titulo-cadastrar {
     font-family: 'Anton', sans-serif !important;
     font-weight: "bold" !important;
+    color:#3d0f03!important;
+
 }
+
+.container-cadastrar{
+    margin: 30px auto;
+}
+
+.input-cadastrar input{
+    font-size: 18px;
+    color: #3d0f03!important;
+}
+
+.input-cadastrar label {
+    color: #3d0f03;
+}
+
+input{
+    color: black!important;
+  }
+
+  .btnCancelar {
+    margin-right: 20px !important;
+}
+
