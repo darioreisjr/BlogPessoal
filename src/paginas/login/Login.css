@@ -13,8 +13,10 @@
 }
 
 .container-login {
-    margin: 30px auto;
+    height: 100vh;
 }
+
+
 
 .fonte-titulo-login {
     font-family: 'Anton', sans-serif !important;

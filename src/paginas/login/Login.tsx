@@ -69,10 +69,10 @@ function Login() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        className="container-login"
+        className="container-login "
       >
-        <Grid alignItems="center" xs={6} >
-          <Box paddingX={20} className="">
+        <Grid alignItems="center" xs={6}>
+          <Box paddingX={20}>
             <form action="" onSubmit={onSubmit}>
               <Typography
                 variant="h3"
@@ -80,7 +80,7 @@ function Login() {
                 color="textPrimary"
                 component="h3"
                 align="center"
-                className="fonte-titulo-login"
+                className="fonte-titulo-login "
               >
                 Entrar
               </Typography>
