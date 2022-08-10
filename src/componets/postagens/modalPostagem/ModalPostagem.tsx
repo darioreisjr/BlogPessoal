@@ -45,8 +45,8 @@ function ModalPostagem () {
   };
 
   const body = (
-    <div style={modalStyle} className={classes.paper}>
-      <Box display="flex" justifyContent="flex-end" className="cursor">
+    <div style={modalStyle} className={classes.paper} >
+      <Box display="flex" justifyContent="flex-end" className="cursor ">
         <CloseIcon onClick={handleClose}/>
       
       </Box>
@@ -58,15 +58,18 @@ function ModalPostagem () {
 
   return (
     <div>
-      <Button
-        variant="outlined"
-        className="btnModal"
-        onClick={handleOpen}>Nova Postagem</Button>
+      <button className="learn-more btnModal" onClick={handleOpen}>
+          <span className="circle" aria-hidden="true">
+            <span className="icon arrow"></span>
+          </span>
+          <span className="button-text">Nova Postagem</span>
+      </button>
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
+        className="container-modal"
       >
         {body}
       </Modal>

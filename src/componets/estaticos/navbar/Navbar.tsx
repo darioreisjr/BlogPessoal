@@ -12,6 +12,7 @@ import { addToken } from "../../../store/tokens/actions";
 function Navbar() {
   //const [token, setToken] = useLocalStorage('token');
 
+  /* Getting the token from the redux store. */
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
