@@ -9,6 +9,7 @@ import { cadastroUsuario } from '../../services/Service'
 
 import './CadastroUsuario.css';
 import { Box } from '@mui/material';
+import { toast } from 'react-toastify';
 
 function CadastroUsuario() {
 
@@ -54,26 +55,61 @@ function CadastroUsuario() {
         e.preventDefault()
 
         // Estrutura Condicional que verifica se as senhas batem e se a Senha tem mais de 8 caracteres
-        if (confirmarSenha === user.senha && user.senha.length >= 8) {
+        if (confirmarSenha === user.senha && user.senha.length > 7) {
 
             //Tenta executar o cadastro
             try {
                 await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-                alert("Usuário cadastrado com sucesso")
+                alert("")
+                toast.success('Usuário cadastrado com sucesso', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    });
 
             //Se houver erro, pegue o Erro e retorna uma msg
             } catch (error) {
-                console.log(`Error: ${error}`)
                 
                 //Pode modificar a msg de acordo com o erro 
-                alert("Usuário já existente")
+                toast.error('Usuário já existente', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    });
             }
 
-        } else {
-            alert("Insira no miníno 8 caracteres na senha.")    // Mensagem que indica a quantidade minima de caracteres
-
+        } else if  ( user.senha.length < 8) {
+             // Mensagem que indica a quantidade minima de caracteres
+            toast.info('Insira no miníno 8 caracteres na senha.', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                });
             setUser({ ...user, senha: "" }) // Reinicia o campo de Senha
             setConfirmarSenha("")           // Reinicia o campo de Confirmar Senha
+        } else {
+            toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                })
         }
     }
 

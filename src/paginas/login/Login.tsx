@@ -12,6 +12,7 @@ import { useDispatch } from 'react-redux';
 
 /* Importando a função do criador de ações do arquivo de actions. */
 import { addToken } from '../../store/tokens/actions';
+import { toast } from 'react-toastify';
 
 function Login() {
   // redirecionar o usuario para determinada pagina
@@ -56,9 +57,25 @@ function Login() {
       try{
           await login(`/usuarios/logar`, userLogin, setToken)
 
-          alert('Usuário logado com sucesso!');
+          toast.success('Usuário logado com sucesso!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
       }catch(error){
-          alert('Dados do usuário inconsistentes. Erro ao logar!');
+          toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
       }
   }
 

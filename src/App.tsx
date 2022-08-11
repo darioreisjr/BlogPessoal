@@ -13,6 +13,9 @@ import CadastroTema from "./componets/temas/cadastroTema/CadastroTema";
 import DeletarTema from "./componets/temas/deletarTema/DeletarTema";
 import store from './store/store';
 import { Provider } from "react-redux";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
@@ -23,6 +26,8 @@ hierarquia abaixo. Normalmente, você não pode usar connect() sem envolver um c
 em <Provider>. 
 */
     <Provider store={store}>
+
+    <ToastContainer/> 
 
     <Router>
       <Navbar />

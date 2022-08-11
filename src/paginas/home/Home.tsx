@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 //import useLocalStorage from "react-use-localstorage";
 import "../../assets/imagemHome.png";
 import ModalPostagem from "../../componets/postagens/modalPostagem/ModalPostagem";
@@ -22,7 +23,15 @@ function Home() {
 
   useEffect(()=> {
     if (token === '') {
-      alert("Você precisa estar logado")
+      toast.info('Você precisa estar logado', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
       navigate("/login")
     }
   }, [token])
