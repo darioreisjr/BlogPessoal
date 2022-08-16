@@ -7,4 +7,4 @@ interface Postagem {
     tema?: Tema | null ;
 }
 
-export default Postagem;
+export default Postagem
