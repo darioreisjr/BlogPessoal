@@ -98,6 +98,26 @@ function Navbar() {
         </Box>
         </Link>
 
+        <Box mx={1} className="cursor">
+          <Typography
+            variant="h6"
+            color="inherit"
+            className="conteudo-item"
+          >
+            Sobre
+          </Typography>
+        </Box>
+
+        <Box mx={1} className="cursor">
+          <Typography
+            variant="h6"
+            color="inherit"
+            className="conteudo-item"
+          >
+            Contatos
+          </Typography>
+        </Box>
+
           <Box mx={1} className="cursor" onClick={goLogout} >
             <Typography
               variant="h6"

@@ -1,63 +1,77 @@
-import React from 'react';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import {Typography, Grid } from '@material-ui/core';
-import { Box } from '@mui/material';
-import "./Footer.css"
-import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import React from "react";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import { Typography, Grid } from "@material-ui/core";
+import { Box } from "@mui/material";
+import "./Footer.css";
 
 function Footer() {
-
-    const token = useSelector<TokenState, TokenState["tokens"]>(
-        (state) => state.tokens
-      );
-
-    var footerComponent;
-
-    if (token != "") {
-        footerComponent = <Grid container direction="row" justifyContent="center" alignItems="center" >
-
-        <Grid className='container-rodape' alignItems="center" item xs={12} >
-
-            <Box className="container-redeSociais">
-
-                <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-
-                    <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}className="redeSociais-titulo" >Siga-nos nas redes sociais </Typography>
-
-                </Box>
-                <Box display="flex" alignItems="center" justifyContent="center">
-                    <a href="https://www.facebook.com/darioreisjr" target="_blank">
-                        <FacebookIcon style={{ fontSize: 60, color: "white" }} />
-                    </a>
-                    <a href="https://www.instagram.com/darioreisjr/" target="_blank">
-                        <InstagramIcon style={{ fontSize: 60, color: "white" }} />
-                    </a>
-                    <a href="https://www.linkedin.com/in/darioreisjr/" target="_blank">
-                        <LinkedInIcon style={{ fontSize: 60, color: "white" }} />
-                    </a>
-                </Box>
+  return (
+    <>
+      <Grid container className="container-rodape">
+        <Grid alignItems="center" xs={12}>
+          <Box className="container-rodape-conteudo">
+            <Box>
+              <Typography className="rodape-titulo">
+                Mergulhe nas habilidades
+              </Typography>
             </Box>
-            <Box className='container-footer'>
-                <Box paddingTop={1}>
-                    <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2022 Copyright:</Typography>
-                </Box>
-                <Box>
-                    <a target="_blank" href="https://brasil.generation.org">
-                        <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center">brasil.generation.org</Typography>
-                    </a>
-                </Box>
+
+            <Box className="container-rodape-textos">
+              <Box className="container1-textos">
+                <Typography>
+                  Os artigos e cursos mais recentes para ajudá-lo a atualizar
+                  suas habilidades e aprender as últimas tendências. Domine o
+                  desenvolvimento web com esses recursos incríveis que estão
+                  disponíveis gratuitamente!
+                </Typography>
+              </Box>
+
+              <Box className="container2-textos">
+                <Typography>Home</Typography>
+                <Typography>Blog</Typography>
+                <Typography>Postagem</Typography>
+              </Box>
+
+              <Box className="container3-textos">
+                <Typography>Sobre</Typography>
+                <Typography>Contatos</Typography>
+                <Typography>Política de Privacidade</Typography>
+                <Typography>termos e Condições</Typography>
+              </Box>
             </Box>
+
+            <Box display="flex" alignItems="center" justifyContent="center">
+              <a href="https://www.facebook.com/darioreisjr" target="_blank">
+                <FacebookIcon className="icons" />
+              </a>
+              <a href="https://www.instagram.com/darioreisjr/" target="_blank">
+                <InstagramIcon className="icons" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/darioreisjr/"
+                target="_blank"
+              >
+                <LinkedInIcon className="icons" />
+              </a>
+            </Box>
+          </Box>
+
+          <Box className="container-footer">
+            <Box>
+              <Typography>© 2022 Copyright:</Typography>
+            </Box>
+            <Box>
+              <a target="_blank" href="https://brasil.generation.org">
+                <Typography className="container-rodape-links" >brasil.generation.org</Typography>
+              </a>
+            </Box>
+          </Box>
         </Grid>
-    </Grid>
-    }
-    return (
-        <>
-            {footerComponent}
-        </>
-    )
+      </Grid>
+    </>
+  );
 }
 
 export default Footer;
