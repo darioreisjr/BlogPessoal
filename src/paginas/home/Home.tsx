@@ -1,40 +1,40 @@
-import { Button, Grid, Typography } from "@material-ui/core";
+import {  Grid, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import React from "react";
+import { Link } from "react-router-dom";
+// import { toast } from "react-toastify";
 //import useLocalStorage from "react-use-localstorage";
 import "../../assets/imagemHome.png";
 import ModalPostagem from "../../componets/postagens/modalPostagem/ModalPostagem";
 import TabPostagem from "../../componets/postagens/tabpostagem/TabPostagem";
-import { TokenState } from "../../store/tokens/tokensReducer";
+// import { TokenState } from "../../store/tokens/tokensReducer";
 import "./Home.css";
+import BannerInscrevaSe from './../../componets/bannerInscrevaSe/BannerInscrevaSe';
 
 function Home() {
 
-  let navigate = useNavigate();
-  //const [token, setToken] = useLocalStorage('token');
+  // let navigate = useNavigate();
+  // //const [token, setToken] = useLocalStorage('token');
 
-  /* Um hook que é usado para obter o estado do token. */  
-  const token = useSelector<TokenState, TokenState["tokens"]>(
-    (state) => state.tokens
-  );
+  // /* Um hook que é usado para obter o estado do token. */  
+  // const token = useSelector<TokenState, TokenState["tokens"]>(
+  //   (state) => state.tokens
+  // );
 
-  useEffect(()=> {
-    if (token === '') {
-      toast.info('Você precisa estar logado', {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        });
-      navigate("/login")
-    }
-  }, [token])
+  // useEffect(()=> {
+  //   if (token === '') {
+  //     toast.info('Você precisa estar logado', {
+  //       position: "bottom-right",
+  //       autoClose: 5000,
+  //       hideProgressBar: false,
+  //       closeOnClick: true,
+  //       pauseOnHover: true,
+  //       draggable: true,
+  //       progress: undefined,
+  //       });
+  //     navigate("/login")
+  //   }
+  // }, [token])
 
   return (
     <>
@@ -45,6 +45,8 @@ function Home() {
         alignItems="center"
         className="container-principal"
       >
+        <BannerInscrevaSe/>
+
         <Grid alignItems="center" item xs={6}>
           <Box paddingX={20} className="box-conteudo">
             <Typography
@@ -85,7 +87,7 @@ function Home() {
 
         <Grid item xs={6} className="container-img sessao-principal-imagem">
           <img
-            src="https://i.imgur.com/IVvJCjn.png"
+            src="https://i.imgur.com/0V4vZU1.png"
             alt="imagem de uma pessoa estudando tecnologia"
             width="50%"
             className="img-central principal-imagem-item"

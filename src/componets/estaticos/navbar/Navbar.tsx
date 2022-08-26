@@ -37,10 +37,12 @@ function Navbar() {
      navigate('/login')
   }
 
+  var navbarComponetsAdmin;
   var navbarComponets;
 
+
   if(token != "") {
-    navbarComponets = <AppBar position="static" className="container-navbar">
+    navbarComponetsAdmin = <AppBar position="static" className="container-navbar">
     <Toolbar variant="dense" className="container-conteudo">
       <Box className="container-logo">
         <Typography variant="h1" color="inherit" className="titulo">
@@ -131,9 +133,78 @@ function Navbar() {
       </Box>
     </Toolbar>
   </AppBar>
+  }if(token == "") {
+    navbarComponets = <AppBar position="static" className="container-navbar">
+    <Toolbar variant="dense" className="container-conteudo">
+      <Box className="container-logo">
+        <Typography variant="h1" color="inherit" className="titulo">
+          Dario Reis+
+        </Typography>
+      </Box>
+
+      <Box display="flex" justifyContent="start" className="container-menu">
+
+        <Link to="/home">
+        <Box mx={1} className="cursor">
+          <Typography
+            variant="h6"
+            color="inherit"
+            className="conteudo-item"
+          >
+            home
+          </Typography>
+        </Box>
+        </Link>
+
+        <Link to="/posts">
+        <Box mx={1} className="cursor">
+          <Typography
+            variant="h6"
+            color="inherit"
+            className="conteudo-item"
+          >
+            postagens
+          </Typography>
+        </Box>
+        </Link>
+
+        <Box mx={1} className="cursor">
+          <Typography
+            variant="h6"
+            color="inherit"
+            className="conteudo-item"
+          >
+            Sobre
+          </Typography>
+        </Box>
+
+        <Box mx={1} className="cursor">
+          <Typography
+            variant="h6"
+            color="inherit"
+            className="conteudo-item"
+          >
+            Contatos
+          </Typography>
+        </Box>
+
+          <Box mx={1} className="cursor">
+            <Typography
+              variant="h6"
+              color="inherit"
+              className="conteudo-item"
+            >
+              login
+            </Typography>
+          </Box>
+
+      </Box>
+    </Toolbar>
+  </AppBar>
   }
   return (
     <>
+      {navbarComponetsAdmin}
       {navbarComponets}
     </>
   );

@@ -19,16 +19,16 @@
 .fonte-titulo-login {
     font-family: 'Anton', sans-serif !important;
     font-weight: "bold" !important;
-    color:#3d0f03!important;
+    color:#183114!important;
 }
 
 .input-login input{
     font-size: 18px;
-    color: #3d0f03!important;
+    color: #183114!important;
 }
 
 .input-login label {
-    color: #3d0f03;
+    color: #183114;
 }
 
 input{
@@ -37,7 +37,7 @@ input{
 
 .font-cadastre-se {
     font-weight: 700!important;
-    color: #3d0f03;
+    color: #183114;
 }
 
 
@@ -50,14 +50,14 @@ input{
     font-size: 17px;
     letter-spacing: 0.1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(0, 0, 0);
+    color: #F3F4D3!important;
     font-weight: bold!important;
     backdrop-filter: blur(5px);
-    background-color: rgba(255, 255, 255, 1);
+    background-color: #183114;
     border-radius: 26px;
-    box-shadow: 0px 0px 0px 0px rgba(145, 192, 255, 0.5),
-                inset -8px -8px 16px 0px rgba(7, 144, 236, 0.973),
-                inset 0px 11px 28px 0px rgb(255, 255, 255);
+    box-shadow: 0px 0px 0px 0px #18311480,
+                inset -8px -8px 16px 0px #183114f8,
+                inset 0px 11px 28px 0px #183114!important;
    }
    
    .btn-logar:hover {
